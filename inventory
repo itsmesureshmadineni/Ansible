@@ -1,0 +1,9 @@
+node1 ansible_ssh_host=3.231.204.167 ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/Users/sureshmadineni/Documents/Devops/sureshdevops.pem
+
+node2 ansible_ssh_host=3.227.246.66 ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/Users/sureshmadineni/Documents/Devops/sureshdevops.pem
+
+[prod]
+node1
+
+[dev]
+node2

@@ -1,0 +1,10 @@
+---
+
+- hosts: prod
+  become: true
+  tasks:
+
+  - name: install tree
+    apt:
+      name: tree
+      state: absent
