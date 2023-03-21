@@ -1,0 +1,21 @@
+---
+- hosts: node1
+  gather_facts: true
+  become: true
+
+  tasks:
+  - name: check uptime
+    shell: uptime
+    register: time
+  - debug: var=time.stdout_lines
+
+  - name: verify disk space
+    command: df -h
+    register: disk
+  - debug: var=disk.stdout_lines
+
+  - name: check memory
+    shell: free -m
+    register: memo
+    when: disk != None
+  - debug: var=memo.stdout_lines

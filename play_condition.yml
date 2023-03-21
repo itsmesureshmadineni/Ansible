@@ -1,0 +1,9 @@
+---
+- hosts: node1
+  gather_facts: true
+  become: true
+
+  tasks:
+  - name: restart os
+    command: reboot
+    when: ansible_distribution == "Ubuntu"
