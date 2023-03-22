@@ -10,12 +10,21 @@
   - debug: var=time.stdout_lines
 
   - name: verify disk space
-    command: df -h
+    shell: |
+        df -h | grep -i "/dev/root" | awk -F" " '{ print $5 }' | sed 's/%//g'
     register: disk
+    when: time != None
+#  - set_fact:
+ #         dataresult: "{{ disk | to_json(indent=4, sort_keys=True) }}"
+ # - debug: var=dataresult.stdout_lines
   - debug: var=disk.stdout_lines
+ # - local_action: copy content={{ disk | to_nice_json }} dest=disk.txt
 
   - name: check memory
     shell: free -m
     register: memo
-    when: disk != None
+    when: disk.stdout | int > 80
+     # -  disk is search('/dev/root')
+     # -  disk is search('58') 
+   
   - debug: var=memo.stdout_lines
