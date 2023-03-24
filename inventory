@@ -1,6 +1,8 @@
-node1 ansible_ssh_host=44.198.53.36 ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/Users/sureshmadineni/Documents/Devops/sureshdevops.pem
+node1 ansible_ssh_host=44.215.105.174 ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/Users/sureshmadineni/Documents/Devops/sureshdevops.pem
 
-node2 ansible_ssh_host=3.227.246.66 ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/Users/sureshmadineni/Documents/Devops/sureshdevops.pem
+node2 ansible_ssh_host=3.237.224.111 ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/Users/sureshmadineni/Documents/Devops/sureshdevops.pem
+
+node3 ansible_ssh_host=34.229.75.177 ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/Users/sureshmadineni/Documents/Devops/sureshdevops.pem
 
 [prod]
 node1
